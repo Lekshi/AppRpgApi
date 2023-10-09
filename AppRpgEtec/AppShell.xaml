@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppRpgEtec.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppRpgEtec"
+    xmlns:viewsPersonagens ="clr-namespace:AppRpgEtec.Views.Personagens">
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{OnPlatform Android=130, iOS=200}">
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <FlexLayout Grid..Row="0" Direction="Row" AlingItems="Center">
+                    <Frame Padding="0" CornerRadius="40" HeightRequest="80" WidthRequest="80">
+                        <Image Source="has_logo_transparente.svg"/>
+                    </Frame>
+                    <VerticalStackLayout Padding="10,0,0,0" Spacing="0">
+                        <Label Text="App RPG Etec" FontAttributes="Bold" FontSize="Medium"/>
+                    </VerticalStackLayout>
+                </FlexLayout>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate viewsPersonagens:ListagemView}"
+        Route="MainPage" />
+
+</Shell>
